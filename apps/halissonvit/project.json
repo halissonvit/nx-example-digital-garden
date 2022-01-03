@@ -1,0 +1,54 @@
+{
+  "root": "apps/halissonvit",
+  "sourceRoot": "apps/halissonvit",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "apps/halissonvit",
+        "outputPath": "dist/apps/halissonvit"
+      },
+      "configurations": {
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "options": {
+        "buildTarget": "halissonvit:build",
+        "dev": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "halissonvit:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "halissonvit:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/halissonvit"],
+      "options": {
+        "jestConfig": "apps/halissonvit/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/halissonvit/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": []
+}

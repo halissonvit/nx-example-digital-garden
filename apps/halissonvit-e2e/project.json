@@ -1,0 +1,28 @@
+{
+  "root": "apps/halissonvit-e2e",
+  "sourceRoot": "apps/halissonvit-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/halissonvit-e2e/cypress.json",
+        "devServerTarget": "halissonvit:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "halissonvit:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/halissonvit-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["halissonvit"]
+}
