@@ -2,6 +2,10 @@
   "version": 2,
   "projects": {
     "halissonvit": "apps/halissonvit",
-    "halissonvit-e2e": "apps/halissonvit-e2e"
+    "halissonvit-e2e": "apps/halissonvit-e2e",
+    "markdown": "libs/markdown",
+    "mdx-elements": "libs/mdx-elements",
+    "storybook-e2e-ui-e2e": "apps/storybook-e2e/ui-e2e",
+    "ui": "libs/ui"
   }
 }
